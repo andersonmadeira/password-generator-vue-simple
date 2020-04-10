@@ -1,0 +1,219 @@
+/* Variables */
+
+:root {
+  --main-bg-color: #43b8c9;
+  --main-hover-color: #74cbd7;
+  --main-bg-light: #f8fbfc;
+}
+
+/* Global Styles */
+
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f3f7f7;
+  font-family: 'Rubik', sans-serif;
+  color: #39424e;
+  font-size: 14px;
+}
+
+.app-container {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+}
+
+/* Checkbox */
+
+.checkbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.2em;
+}
+
+.checkbox .checkbox__checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.checkbox .checkbox__checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox:hover input ~ .checkbox__checkmark {
+  background-color: var(--main-bg-light);
+}
+
+.checkbox input:checked ~ .checkbox__checkmark {
+  background-color: var(--main-bg-color);
+}
+
+.checkbox input:checked ~ .checkbox__checkmark:hover {
+  background-color: var(--main-hover-color);
+}
+
+.checkbox input:checked ~ .checkbox__checkmark:after {
+  display: block;
+}
+
+/* Slider */
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--main-bg-color);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--main-bg-color);
+  cursor: pointer;
+}
+
+
+/* Button */
+
+.button {
+  font-size: 1.2em;
+
+  color: #fff;
+  font-weight: 700;
+
+  border: none;
+  border-radius: 2px;
+  height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: inline-block;
+
+  box-shadow: 0 6px 16px 0 rgba(67, 184, 201, 0.2);
+  background: var(--main-bg-color);
+  border-color: var(--main-bg-color);
+
+  outline: none;
+  cursor: pointer;
+
+  transition: all 0.5s ease;
+}
+
+.button:hover {
+  background: var(--main-hover-color);
+}
+
+/* Card */
+
+.card {
+  font-size: 1.5em;
+  font-family: monospace;
+  background-color: #fff;
+  box-shadow: rgba(184, 194, 215, 0.35) 0px 6px 9px 0px;
+  border-radius: 8px;
+  padding: 46px 32px 40px 32px;
+  position: relative;
+  margin-top: 20px;
+  overflow-wrap: break-word;
+  transition: box-shadow 0.4s ease-in-out 0s,
+    background-color 0.4s ease-in-out 0s;
+}
+
+/* Copy Button */
+
+.copy-button {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  font: 1em Rubik, sans-serif;
+  text-transform: uppercase;
+  color: #757575;
+  padding: 3px 10px;
+  opacity: 0.4;
+  transition: all 0.5s ease;
+}
+
+.copy-button .copy-button__icon {
+  margin-right: 0.4em;
+}
+
+.copy-button:hover {
+  opacity: 0.7;
+}
+
+.svg-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #4691f6;
+}
+
+.svg-icon circle {
+  stroke: #4691f6;
+  stroke-width: 1;
+}
