@@ -89,5 +89,16 @@ const app = new Vue({
 
       document.body.removeChild(inputElem)
     },
+  },
+  watch: {
+    animation(newValue, oldValue) {
+      if (!newValue) {
+        if (this.shuffleInterval) {
+          window.clearInterval(this.shuffleInterval)
+          this.shuffleInterval = 0;
+          this.shuffledPassword = '';
+        }
+      }
+    }
   }
 })
